@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/icone.png" width="560" alt="Barra do Chrome com o escudo do Botafogo e o selo verde 1-0; a dica mostra Botafogo 1 x 0 Atlético-MG, 2º tempo, 70 minutos">
+  <img src="docs/icone.png" width="560" alt="Barra do Chrome com o escudo do Grêmio e o selo verde 1-1; a dica mostra Grêmio 1 x 1 Internacional, 2º tempo, 78 minutos">
 </p>
 
 ---
@@ -29,7 +29,7 @@
 <table>
   <tr>
     <td width="330" valign="top">
-      <img src="docs/popup.png" width="320" alt="Popup da extensão: card ao vivo de Botafogo 1 x 0 Atlético-MG com os lances, outros favoritos e os jogos do dia">
+      <img src="docs/popup.png" width="320" alt="Popup da extensão: card ao vivo do Grenal, Grêmio 1 x 1 Internacional, com os gols de Vitinho e Wallace, outros favoritos e os jogos do dia">
     </td>
     <td valign="top">
       <h3>O que ela faz</h3>
@@ -66,7 +66,7 @@
 | ![14d](https://img.shields.io/badge/14d-2563eb?style=flat-square) | Faltam 14 dias para o próximo jogo |
 | ![!](https://img.shields.io/badge/!-dc2626?style=flat-square) | Sem conexão há mais de 2 minutos |
 
-Passe o mouse no ícone para ver o texto completo, como *"Grêmio 1 x 0 Bahia · 1º tempo · 34'"*.
+Passe o mouse no ícone para ver o texto completo, como *"Grêmio 1 x 1 Internacional · 2º tempo · 78'"*.
 
 ## Perguntas frequentes
 
