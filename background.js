@@ -9,6 +9,7 @@ const SCHEDULE_MAX_AGE = 6 * 3600e3;
 const TEAMS_MAX_AGE = 7 * 24 * 3600e3;
 const ERROR_BADGE_AFTER = 2 * 60e3;
 const GOAL_FLASH = 60e3;
+const ALERT_MAX_GAP = 5 * 60e3; // leitura anterior mais velha que isso não gera aviso
 
 // ---------- utilidades ----------
 
@@ -62,7 +63,10 @@ function update({ force = false } = {}) {
       let games = st.board ? st.board.games : [];
       if (force || !st.board || now - st.board.fetchedAt > BOARD_MIN_AGE) {
         const fresh = PB.parseScoreboard(await getJSON(PB.urls.scoreboard()));
-        const before = new Map(games.map((g) => [g.id, g]));
+        // Leitura anterior velha (Chrome fechado ou computador dormindo): os lances já passaram,
+        // então não viram aviso nem selo "GOL".
+        const recent = st.board && now - st.board.fetchedAt <= ALERT_MAX_GAP;
+        const before = new Map(recent ? games.map((g) => [g.id, g]) : []);
         const alerts = fresh.flatMap((g) => PB.diffGame(before.get(g.id), g, st.favorites, st.settings));
         const flash = { ...st.flashUntil };
         for (const id of Object.keys(flash)) if (flash[id] < now) delete flash[id];
@@ -93,8 +97,13 @@ function update({ force = false } = {}) {
           now - s.fetchedAt > SCHEDULE_MAX_AGE ||
           (s.next && Date.parse(s.next.date) < now && now - s.fetchedAt > 30 * 60e3);
         if (stale) {
-          schedules[id] = await fetchSchedule(id);
-          changed = true;
+          try {
+            schedules[id] = await fetchSchedule(id);
+            changed = true;
+          } catch (e) {
+            // Com agenda antiga guardada, segue com ela: o placar acabou de ser lido, não é "sem conexão".
+            if (!s) throw e;
+          }
         }
       }
       if (changed) patch.schedules = schedules;
@@ -188,7 +197,7 @@ async function render() {
 async function notify(a) {
   let iconUrl = 'icons/icon128.png';
   try {
-    const c = await crest(a.teamId);
+    const c = a.teamId ? await crest(a.teamId) : null;
     if (c) iconUrl = c.dataUrl;
   } catch {}
   await chrome.notifications.create(`pb|${a.eventId}|${a.type}|${Date.now()}`, {
@@ -231,7 +240,7 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
       const st = await load();
       await notify({
         eventId: 'teste',
-        teamId: st.favorites[0] || '6273',
+        teamId: st.favorites[0] || null, // sem favorito: ícone da extensão
         type: 'goal',
         title: 'Teste: GOL!',
         message: 'É assim que os avisos de gol vão aparecer.',

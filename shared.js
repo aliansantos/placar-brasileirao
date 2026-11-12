@@ -5,6 +5,7 @@
 globalThis.PB = (() => {
   const TZ = 'America/Sao_Paulo';
   const API = 'https://site.api.espn.com/apis/site/v2/sports/soccer/bra.1';
+  const STORE = 'https://chromewebstore.google.com/detail/ccnlhjamkopjfpdlkplkiimgecobccek';
   const HOUR = 3600e3;
   const DAY = 24 * HOUR;
   // Duração aproximada de um jogo, do apito inicial ao final (usada para "terminou há X horas").
@@ -42,6 +43,8 @@ globalThis.PB = (() => {
     logo: (id, size = 64) =>
       `https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/${id}.png&w=${size}&h=${size}`,
     match: (eventId) => `https://www.espn.com.br/futebol/partida/_/jogoId/${eventId}`,
+    review: () => `${STORE}/reviews`,
+    issues: () => 'https://github.com/aliansantos/placar-brasileirao/issues',
   };
 
   // ---------- leitura da API ----------

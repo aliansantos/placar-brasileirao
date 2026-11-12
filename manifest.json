@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Placar Brasileirão",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Placar ao vivo do Brasileirão Série A no ícone do Chrome, com avisos de gol dos seus times favoritos.",
   "minimum_chrome_version": "120",
   "permissions": ["storage", "alarms", "notifications"],

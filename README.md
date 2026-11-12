@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/aliansantos/placar-brasileirao/releases/latest"><img src="https://img.shields.io/badge/Baixar-vers%C3%A3o%20mais%20recente-16a34a?style=for-the-badge" alt="Baixar a versão mais recente"></a>
+  <a href="https://chromewebstore.google.com/detail/ccnlhjamkopjfpdlkplkiimgecobccek"><img src="https://img.shields.io/badge/Instalar-Chrome%20Web%20Store-16a34a?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Instalar pela Chrome Web Store"></a>
 </p>
 
 <p align="center">
@@ -34,7 +34,7 @@
     <td valign="top">
       <h3>O que ela faz</h3>
       <p>⚽ <b>Placar no ícone</b><br>O escudo do seu time e o placar em tempo real na barra do Chrome.</p>
-      <p>🔔 <b>Aviso de gol</b><br>Notificação do Windows a cada gol, no início, no intervalo e no fim do jogo.</p>
+      <p>🔔 <b>Aviso de gol</b><br>Notificação do sistema a cada gol, no início, no intervalo e no fim do jogo.</p>
       <p>⭐ <b>Vários times</b><br>Marque quantos quiser. O ícone mostra o primeiro que estiver jogando.</p>
       <p>📅 <b>Próximo jogo</b><br>Sem jogo, o ícone mostra quando é o próximo: hora, dia ou dias que faltam.</p>
       <p>📋 <b>Rodada inteira</b><br>No popup: lances do seu jogo, outros favoritos e todos os jogos do dia.</p>
@@ -45,13 +45,19 @@
 
 ## Instalar
 
-> Ainda não está na Chrome Web Store. A instalação é manual e leva um minuto.
+1. Abra a extensão na **[Chrome Web Store](https://chromewebstore.google.com/detail/ccnlhjamkopjfpdlkplkiimgecobccek)** e clique em **Usar no Chrome**.
+2. Fixe o ícone: clique no quebra-cabeça 🧩 e no alfinete ao lado de **Placar Brasileirão**.
+3. Clique no ícone, vá na aba **Times** e marque seus times com a estrela.
 
-1. Baixe o `.zip` da **[versão mais recente](https://github.com/aliansantos/placar-brasileirao/releases/latest)** e extraia numa pasta que vai continuar existindo. O Chrome carrega a extensão dessa pasta.
-2. Abra `chrome://extensions` e ligue o **Modo do desenvolvedor**, no canto superior direito.
-3. Clique em **Carregar sem compactação** e escolha a pasta extraída (a que tem o `manifest.json`).
-4. Fixe o ícone: clique no quebra-cabeça 🧩 e no alfinete ao lado de **Placar Brasileirão**.
-5. Clique no ícone, vá na aba **Times** e marque seus times com a estrela.
+<details>
+<summary><b>Instalar pelo arquivo .zip, sem a loja</b></summary>
+<br>
+<ol>
+  <li>Baixe o <code>.zip</code> da <b><a href="https://github.com/aliansantos/placar-brasileirao/releases/latest">versão mais recente</a></b> e extraia numa pasta que vai continuar existindo. O Chrome carrega a extensão dessa pasta.</li>
+  <li>Abra <code>chrome://extensions</code> e ligue o <b>Modo do desenvolvedor</b>, no canto superior direito.</li>
+  <li>Clique em <b>Carregar sem compactação</b> e escolha a pasta extraída (a que tem o <code>manifest.json</code>).</li>
+</ol>
+</details>
 
 ## O que o selo do ícone mostra
 
@@ -85,13 +91,13 @@ O primeiro da sua lista (aba <b>Times</b>) que estiver jogando. Se nenhum estive
 <details>
 <summary><b>Como atualizo para uma versão nova?</b></summary>
 <br>
-Baixe o <code>.zip</code> novo, substitua os arquivos na mesma pasta e clique no ↻ da extensão em <code>chrome://extensions</code>. Seus times e configurações continuam salvos. O que mudou em cada versão está nas <a href="https://github.com/aliansantos/placar-brasileirao/releases">Releases</a>.
+Se você instalou pela Chrome Web Store, o Chrome atualiza sozinho. Se instalou pelo <code>.zip</code>, baixe o novo, substitua os arquivos na mesma pasta e clique no ↻ da extensão em <code>chrome://extensions</code>. Nos dois casos, seus times e configurações continuam salvos. O que mudou em cada versão está nas <a href="https://github.com/aliansantos/placar-brasileirao/releases">Releases</a>.
 </details>
 
 <details>
 <summary><b>Funciona em Edge, Brave ou Opera?</b></summary>
 <br>
-Esses navegadores também aceitam <b>Carregar sem compactação</b>, então a instalação deve funcionar. Por enquanto, a extensão só foi testada no Chrome.
+Esses navegadores aceitam extensões do Chrome, pela loja ou por <b>Carregar sem compactação</b>, então a instalação deve funcionar. Por enquanto, a extensão só foi testada no Chrome.
 </details>
 
 <details>
@@ -108,7 +114,7 @@ Seus times e configurações ficam só no seu navegador. A extensão acessa apen
 
 ## Erros e ideias
 
-Abra uma **[issue](https://github.com/aliansantos/placar-brasileirao/issues)**. Se for um erro, diga a versão da extensão (aparece em `chrome://extensions`) e a do Chrome.
+Abra uma **[issue](https://github.com/aliansantos/placar-brasileirao/issues)**. Se for um erro, diga a versão da extensão (aparece na aba **Config** ou em `chrome://extensions`) e a do Chrome.
 
 ---
 

@@ -752,6 +752,25 @@ select {
   font-weight: 500;
 }
 
+.about {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--faint);
+}
+.about span {
+  margin-right: auto;
+}
+.about .link {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.about .link:hover {
+  color: var(--text);
+}
+
 #toast {
   position: fixed;
   left: 12px;

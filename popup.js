@@ -452,7 +452,7 @@ function viewConfig() {
     [1, 2, 3, 6, 12].map((n) => h('option', { value: String(n), selected: n === s.keepHours }, `${n} ${n === 1 ? 'hora' : 'horas'}`)),
   );
   return [
-    h('div', { class: 'label' }, 'Notificações do Windows'),
+    h('div', { class: 'label' }, 'Notificações do sistema'),
     h(
       'div',
       { class: 'list' },
@@ -480,7 +480,7 @@ function viewConfig() {
           onclick: async () => {
             try {
               await send({ type: 'testNotification' });
-              toast('Notificação enviada. Não apareceu? Veja se o Windows está em "Não incomodar".');
+              toast('Notificação enviada. Não apareceu? Veja se o sistema está em "Não incomodar".');
             } catch (e) {
               toast(e.message, true);
             }
@@ -490,6 +490,13 @@ function viewConfig() {
       ),
     ),
     h('div', { class: 'note' }, 'Atualiza a cada 30 s com jogo de favorito ao vivo e a cada 15 min sem jogo. Fonte: ESPN, sem conta nem chave.'),
+    h(
+      'div',
+      { class: 'about' },
+      h('span', {}, `Versão ${chrome.runtime.getManifest().version}`),
+      h('button', { class: 'link', onclick: () => chrome.tabs.create({ url: PB.urls.issues() }) }, 'Relatar erro'),
+      h('button', { class: 'link', onclick: () => chrome.tabs.create({ url: PB.urls.review() }) }, 'Avaliar na loja'),
+    ),
   ];
 }
 
